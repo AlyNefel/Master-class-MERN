@@ -1,0 +1,54 @@
+/*Id selection*/
+#firstcss{
+    color:blue;
+    font-size:100px;
+}
+
+/*Class selection*/
+.classred{
+    color:red;
+    background-color: aqua;
+}
+
+/*Tag name selection*/
+li{
+    color:green;
+}
+
+.anotherliclass{
+    color:yellow;
+}
+
+#litest{
+    color:red;
+}
+
+.style-link{
+    /*remove the underline*/
+    text-decoration: none;
+
+    /*Text color change*/
+    color:blueviolet;
+    font-weight: bold;
+    cursor: progress;
+}
+
+.container-media{
+    border: 2px solid grey;
+    text-align: center;
+}
+
+.style-image{
+    width:200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 3px 10px 10px red;
+    margin-top: 10px;
+}
+
+body{
+background-color: grey;
+background-image: url(assets/images/js1.png);
+background-repeat: no-repeat;
+background-size:cover;
+}

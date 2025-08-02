@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table & Form</title>
+</head>
+<body>
+    <!--Table -->
+
+    <h2>Table exeampleee : </h2>
+    <table border="1" width="250px">
+    <thead>
+      <tr>
+        <th>Name </th>
+        <th>Age</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <!--Table data or informations -->
+    <tbody>
+        <tr>
+         <td>Hafnaoui</td>
+         <td>23</td>
+         <td>Tnis</td>
+        </tr>
+
+        <tr>
+         <td>Mallouli</td>
+         <td>36</td>
+         <td>Tnis</td>
+        </tr>
+
+    </tbody>
+    </table>
+    
+<!--Form : a way to collect data-->
+<h2>Form example</h2>
+<fieldset>
+    <legend>Registration Form</legend>
+<form action="register.js" method="POST">
+ <label>Name:</label>
+ <!--Text input field-->
+ <input type="text" placeholder="please enter your name"/> <br><br>
+
+<!--Email input-->
+<label>Email:</label>
+<input type="email" name="email"> <br><br>
+
+<!--Password Input-->
+<label for="password" required>password:</label>
+<input type="password" name="password"/> <br><br>
+
+<!--input Date -->
+<label>Bith Date:</label>
+<input type="date" /> <br><br>
+
+<!--Radio button -->
+<label >Gender:</label>
+<input type="radio" name="gender" value="male">
+<label>Male</label>
+<input type="radio" name="gender" value="female">
+<label>Female</label> <br><br>
+
+<!--Color picker -->
+<label >Coose your Color :</label>
+<input type="color"/> <br><br>
+
+<!--File upload -->
+<label >Upload your CV :</label>
+<input type="file" /> <br><br>
+
+<!--Select an option-->
+<label>Choose your country :</label>
+<select>
+<option>Tunisia</option>
+<option>USA</option>
+<option>France</option>
+
+</select> <br><br>
+
+<!--Rande slider-->
+<label for="range">Choose number:</label>
+<input type="range" min="1" max="150"/>
+<input type="number"> <br><br>
+
+<!--Text area -->
+<label>Describe your motivation :</label>
+<textarea min="3" max="10">
+
+</textarea> <br><br>
+
+<!--Hidden input -->
+<input type="text" hidden value="AfirstName">
+<!--Submit Button-->
+<input type="button" value="save" />
+<button type="submit">Save</button>
+
+</form>
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!--To tell teh browser this is a html file -->
+<!DOCTYPE html>
+<!--Main container for everything in the webpage -->
+<html lang="en">
+<!--Holds information about the web page (not visible on the browser )-->    
+<head>
+    <meta charset="UTF-8">
+    <!--This makes our page responsive to all screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CSS file link -->
+    <link rel="stylesheet" href="style.css">
+    <title>First HTML page </title>
+</head>
+<!--Body is the part where you write content (visible on the browser )-->
+<body>
+    <!--Headings : -->
+    <h1 id="firstcss">Thi is a heading</h1>
+    <h2 class="classred">Thi is a heading</h2>
+    <h3>Thi is a heading</h3>
+    <h4>Thi is a heading</h4>
+    <h5 class="classred">Thi is a heading</h5>
+    <h6>Thi is a heading</h6>
+    <!--Paragraph : to write block of text-->
+    <p class="classred">Lorem ipsum dolor sit,                                                                       amet consectetur adipisicing elit. Natus et, quisquam, veniam quidem sint facilis rem ipsam voluptates recusandae provident nemo, assumenda modi? Ipsa sapiente minus ullam architecto reprehenderit impedit?</p>
+
+    <!--Link :this will create a clickable link  -->
+    <!--If we wan tto open in the same window-->
+    <a class="style-link" href="https://www.w3schools.com/html/default.asp">Visit My Github</a>
+    <!--This is a line break-->
+<br><br>
+<!--This is a horizantal line -->
+<hr>
+    <a class="style-link" href="https://www.w3schools.com/html/default.asp" target="_blank">Visit My Github</a>
+
+<!--Image -->
+<div class="container-media">
+<h2>Image example with web link: </h2>   
+<img class="style-image" src="https://tse3.mm.bing.net/th/id/OIP.ki8mRiKpOjICkDXET1otUAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"  alt="error in image format"/> 
+<h2>Image from my local folder :</h2>
+<img src="js.png" alt="error in image format" >
+
+<h2>Image from my local folder relative path:</h2>
+<img width="150px" src="assets/images/js1.png" alt="error in image format" >
+
+<!--Video Tag-->
+<h2>Video example</h2>
+
+<video controls>
+    <source src="assets/videos/cute_cat.mp4" type="video/mp4"/>
+    Your browser does not support the video Tag
+</video>
+</div>
+<!--Unordred list : bullet-points list-->
+<h2>Unordred List </h2>
+<ul>
+    <li id="litest" class="anotherliclass">
+         <h1>Item one</h1> 
+    </li>
+    <li>Item two</li>
+    <li>Item three</li>
+</ul>
+
+<!--Ordred list-->
+<h2>Ordred List</h2>
+<ol>
+    <li>
+         <h1>Item one</h1> 
+    </li>
+    <li>Item two</li>
+    <li>Item three</li>
+
+</ol>
+
+</body>
+</html>
