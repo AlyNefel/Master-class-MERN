@@ -1,4 +1,4 @@
-# Welcome to the Java Stack  🚀
+# Welcome to the MERN Stack  🚀
 
 # Introduction
 Welcome, future MERN wizards! 🧙‍♂️🧙‍♀️ Get ready to embark on an epic journey through the magical world of MERN programming. This bootcamp is designed to transform you into a skilled MERN developer, capable of tackling real-world projects with confidence and finesse.
