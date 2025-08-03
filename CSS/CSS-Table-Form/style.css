@@ -1,0 +1,72 @@
+/*General CSS*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgray;
+    margin:20px;
+    padding:20px;
+}
+
+.styled-table{
+ position:sticky;   
+ width:100%; 
+ /* border:2px solid grey; */
+ border-collapse: collapse;
+ margin-top: 10px;
+ margin-bottom:10px;
+ /* text-align:center; */
+ background-color: white;
+ box-shadow: 2px 2px 10px grey;
+}
+
+.styled-table th,
+.styled-table td {
+border:1px solid grey;
+padding:10px;
+text-align:left;
+}
+.styled-table th{
+    background-color: aqua;
+    color:blueviolet
+}
+
+/*Form style*/
+.styled-form{
+background-color: bisque;
+padding:30px;
+border-radius: 10px;
+box-shadow: 3px 3px 10px black;
+width:350px;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.styled-form input,
+.styled-form textarea{
+    width:100%;
+    padding: 5px;
+    margin-top:5px;
+    border:1px solid grey;
+    border-radius: 3px;
+}
+
+.styled-form input[type="text"] {
+    width: 50%;
+}
+
+.styled-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.styled-button{
+    background-color: #2ecc71;
+    color:white;
+    padding:10px;
+    border:none;
+    box-shadow: 3px 3px 10px black;
+    font-size: 16px;
+}
+
+.styled-form input[type="submit"] {
+    width: 50%;
+    
+}
