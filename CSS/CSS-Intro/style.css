@@ -1,9 +1,22 @@
 /*Id selection*/
+
+body{
+    /* overflow: hidden; */
+}
 #firstcss{
     color:blue;
     font-size:100px;
 }
 
+.typewriter {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 24px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid black; /* blinking cursor */
+      width: 0;
+      animation: typing 20s steps(30, end), blink 0.75s step-end infinite;
+    }
 /*Class selection*/
 .classred{
     color:red;
@@ -30,11 +43,14 @@ li{
     /*Text color change*/
     color:blueviolet;
     font-weight: bold;
-    cursor: progress;
+    cursor:url(https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm9jc2V2YjdjYXA3eGJ0b3d6c2pmMTh4bjd0dWYyYmh6N3FvaDR6diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3oKIPn5EmNia9HSaTC/giphy.gif)                                                                                           
 }
 
 .container-media{
-    border: 2px solid grey;
+    border-right: 10px dashed grey;
+    border-left: 10px solid red;
+    border-top: 10px solid green;
+    border-bottom: 10px solid yellow;
     text-align: center;
 }
 
@@ -47,8 +63,8 @@ li{
 }
 
 body{
-background-color: grey;
-background-image: url(assets/images/js1.png);
+/* background-color: grey; */
+/* background-image: url(assets/images/js1.png); */
 background-repeat: no-repeat;
 background-size:cover;
 }

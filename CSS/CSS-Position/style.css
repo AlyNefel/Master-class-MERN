@@ -1,0 +1,67 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:20px;
+    text-align: center;
+}
+
+.box{
+    width:300px;
+    padding:20px;
+    border:2px solid grey;
+    text-align:center;
+    font-weight: bold;
+}
+
+/* Static position (Default) */
+.static-box{
+background-color: lightgray;
+}
+
+/* Relative box  */
+
+.relative-box{
+    background-color: lightblue;
+    position:relative;
+    top:20px;
+    left:20px;
+}
+
+/* absolute  */
+
+.container{
+position: relative;
+background-color: lightyellow;
+padding: 40px 0px;
+margin:20px auto;
+width:80%;
+border: 2px dashed orange;
+}
+.absolute-box{
+position:absolute;
+background-color: lightcoral;
+top: 10px;
+right:100px;
+}
+
+/* Fixed */
+.fixed-box{
+  background-color: lightgreen;
+  position:fixed;  
+  top:450px;
+  
+}
+
+
+/* Sticky position 
+ */
+ .sticky-box{
+    background-color: lightpink;
+    position:sticky;
+    top:10px;
+    /* width:100% */
+ }
+
+ .testScroll{
+    height: 1000px;
+    border:3px solid green
+ }
