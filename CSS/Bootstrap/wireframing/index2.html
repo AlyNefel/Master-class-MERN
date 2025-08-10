@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Media Display-WireFrame 2</title>
+    <style>
+        .green{background-color: green;height: 80px;}
+        .blue{background-color: blue;height:200px;display:none}
+        .red{background-color: red;padding:10px}
+        .yellow{background-color: yellow;height: 100px;}
+        .purple{background-color: purple;height:80px}
+
+        /* Large screen >1024*/
+        @media(min-width:1024px){
+            .blue{display:block}
+            .yellow-col{
+               
+                width:33.33%  /* == col-4 */
+            }
+
+        }
+
+        /* Medium screen >480 and <1024 */
+        @media(min-width:481px) and (max-width:1024px){
+            .yellow-col{
+                width:50%;
+            }
+            
+        
+        }
+@media(max-width:480px){
+            
+            .yellow-col{
+               
+                width:100% /* == col-12 */
+            }
+
+        }
+    
+
+    </style>
+</head>
+<body class="p-3">
+    <div class="container-fluid">
+<!-- Green block -->
+ <div class="row">
+    <div class="col-12 green">
+    </div>
+ </div>
+
+ <!-- Main content -->
+  <div class="row mt-3">
+    <!-- Blue Block (only visible in >1024px) -->
+     <div class="col-lg-3">
+        <div class="blue"></div>
+     </div>
+
+     <!-- red block -->
+      <div class="col-12 col-lg-9 red d-flex flex-wrap">
+        <!-- Yellow blocks -->
+         <div class="yellow-col p-1"><div class="yellow"></div></div>
+         <div class="yellow-col p-1"><div class="yellow"></div></div>
+         <div class="yellow-col p-1"><div class="yellow"></div></div>
+         <!-- purple block -->
+          <div class="col-12 p-1">
+            <div class="purple">
+
+            </div>
+          </div>
+      </div>
+  </div>
+    </div>
+</body>
+</html>
