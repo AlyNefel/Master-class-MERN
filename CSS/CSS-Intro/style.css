@@ -68,3 +68,13 @@ body{
 background-repeat: no-repeat;
 background-size:cover;
 }
+
+.textRed{
+    color :red;
+    font-size:20px;
+    padding-left: 5px;
+}
+
+.btn-danger{
+    
+}
