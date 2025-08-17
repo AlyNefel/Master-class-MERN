@@ -107,21 +107,10 @@ var increment = 5
 // increment++;  // ==> increment = increment +1  // increment +=1
 // increment+=2  // increment = increment +2 
    
-
-console.log(increment)
+var result = 2**3
+console.log(result)
 
 
 // loops 
 
-   //for loop 
-     // repeats a block of code a specific number of time ( kif nabda na3ref 9adech men marra nbech na3mel instruction)
-
- //exemple 
-   for(var i=0;i<12;i+=2){
-    console.log("This is the counter pair " +i)
-//  if(i%2 ===0){
-//     console.log("this is from if block "+ i)
-//  }
-    
-
-   }    
+  
