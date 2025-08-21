@@ -112,4 +112,97 @@ for(var i = 0;i<note.length;i++){
 
 
       // intro to objects 
-      
+      // a set of key => values /  name : naim / phoneNumber : 201580258
+
+      var person =[
+        "David",
+        "Test",
+        25,
+        "Ariana",
+        "song1",
+        "song2",
+        "song3"
+      ]
+     // console.log(person[2])
+
+      // object person 
+      var person1={
+        name:"David",
+        lastName:"Test",
+       
+        city:"Ariana",
+        songs:["song1","song2","song3"],
+         age:25,
+         address:{
+          city:"ariana",
+          zipCode:2083,
+          street:"ghazela"
+         }
+      }
+      console.log(person1.age)  // === console.log(person1["age"])
+      console.log(person1["name"])
+    console.log(person1.songs[1])
+   console.log(person1.address.zipCode)
+   person1.address.zipCode=5050
+   person1.name="Naiim"
+   console.log(person1)
+
+   // add key to an object 
+   person1.job={title:"Full stack developer",description:"what ever",salary:3000}
+   person1.phoneNumber = 21620202020
+    console.log(person1)
+
+var person2={
+  name: 'David',
+  lastName: 'Test',
+  city: 'Ariana',
+  songs: [ 'song1', 'song2', 'song3' ],
+  age: 25,
+  address: { city: 'ariana', zipCode: 5050, street: 'ghazela' },
+  job: { title: 'Full stack developer', description: 'what ever' },
+  job:{title:"Full stack developer",description:"what ever",salary:1500},
+  phoneNumber: 21620202020
+}
+
+var employees = [person1,person2]
+console.log(employees)
+//i want to add 100 to each salary 
+for(var i = 0;i<employees.length;i++){
+console.log("***************")
+// console.log(employees[i].job.salary)  
+employees[i].job.salary=employees[i].job.salary+100  //employees[i].job.salary+=100
+}
+console.log(employees)
+
+// enhanced loop to extract keys from an object
+// for(var key in person1){
+//   console.log("enhaced for loop")
+// console.log(key)
+// }
+//console.log(employees)
+var users = [
+  {
+    name:"Michael",
+    age:37
+  },
+  {name:"Jonh",
+    age:30
+  },
+  {
+    name:"Yassin",
+    age:18
+  }
+] 
+
+/*
+Michael - 37 
+John - 30 
+Yassin - 18 */ 
+for(var i = 0;i<users.length;i++){
+  console.log(users[i].name + " - "+users[i].age)
+}
+// we will use enhanced for loop to extract each object from the array 
+for(var user of users){  //step 1 :  user === users[0] // step 2 : user === users[1] 
+  console.log(user)
+  // print the desired output 
+}
