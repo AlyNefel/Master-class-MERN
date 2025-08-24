@@ -1,0 +1,74 @@
+<!-- Dom Selectors === find things in a house 
++ getElementById("chair") === "find the chair with the id chair"
+=> fast and direct  +works only if an element is present with this id (UNIQUE) ; 
+
++ getElementByClassName("btn") 
+=> like saying : " Show me all the button that have a class btn "
+=> return list of items + you can iteract with them for eg by looping
+
+
+getElementByTagName(p) : =>same as className but with tag name 
+
++ querySelector(".lamp") => it will return the first element that match with this style
+
++querySelectorAll(".lamp") => will return all lapms that matches this style
+
++++ Events ===> switch // sensors 
++onclick : like pressing a switch 
+
++ onkeydown :  ====> like pressing a key, to play a sound of piano
+
++oninput ===> when some is typing 
+
++onsubmit  => when someone submit a form 
+
++ onmouseover / onmouseout : 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    whdb<khd
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Paint</title>
+    <!-- head : you will link a folder path   -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <label for="color" id="color-label">Choose a color :</label>
+    <!-- Input of type color to let the user choose  -->
+     <input type="color"
+     id="color-input">
+<input type="text" name="test" value="hello from js" id="test">
+     <!-- Buttonto apply the selected color 
+       -->
+     <button onclick="applyColor()" id="apply-color-btn">Apply color</button>
+
+     <!-- the div that will be colored  -->
+      <div style="border:1px solid grey; height: 150px;width:150px" id="color-display"></div>
+
+      <!-- add script tag -->
+<script>
+   // dom selectors : 
+      //1-color input 
+    var colorInput =document.getElementById("color-input")  
+    var colorInput1 =document.querySelector("#color-input")
+    var colorDisplay =  document.getElementById("color-display")
+      //"#00000"
+    // console.log(colorInput.value)
+    // console.log(colorInput1)  
+    var text = document.getElementById("test") 
+
+
+    //declare a function that will apply the color 
+function applyColor(){
+    var color =colorInput1.value
+    console.log(color,"event on click happened !!")
+colorDisplay.style.backgroundColor=color
+
+}
+
+</script>
+</body>
+</html>

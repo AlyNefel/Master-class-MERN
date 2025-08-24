@@ -173,7 +173,7 @@ return sum / array.length
 
 // function to add average to each student object 
 function addAverageToStudents(students){
- for (var index = 0; index < students.length; index++) {
+ for (var i = 0; i < students.length; i++) {
   // add a key average to each student object 
  students[i].average=calculateAverage(students[i].grades)
  }
@@ -182,7 +182,7 @@ function addAverageToStudents(students){
 // find first student with the highest average
 function findToStudent(students){
   var top = students[0]
-  for (let index = 0; index < students.length; index++) {
+  for (let i = 0; i < students.length; i++) {
   if(students[i].average>top.average){
     top = students[i]
   }
@@ -202,3 +202,5 @@ function studentGradesMain(studentsArray){
    return "the student of max average is "+first.name + " with avarage: "+first.average
 
 }
+
+console.log(studentGradesMain(students))
