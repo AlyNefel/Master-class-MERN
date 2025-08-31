@@ -1,66 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Shoes Shop</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Product Cards</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Shoes Shopping</h1>
     <div class="container">
-        <!-- Product 1 -->
-         <div class="product-card">
-            <img src="assets/product1.jpg" alt="" srcset="" class="product-img">
-            <h2 class="product-title">Product1</h2>
-            <p class="product-description">Description 1</p>
-            <input type="number" hidden id="unit-price" value="25">
-            <span id="total-price" class="product-price">25</span><span>$</span>
-            <div class="quantity-control">
-                <button onclick="decreaseQuantity()" class="quantity-control-button">-</button>
-                <input id="quantity" type="number" value="1" min="1">
-                <button onclick="increaseQuantity()" class="quantity-control-button">+</button>
+      <div class="product-card">
+        <img src="assets/product1.jpg" onmouseover="hovered(this)" onmouseout="unhovered(this)" alt="Product Image" class="product-img" />
+        <h2 class="product-title">Cool Sneakers</h2>
+        <p class="product-description">Comfortable running shoes.</p>
+        <span class="product-price">$59.99</span>
+        <div class="quantity-control">
+          <button onclick="decreaseQuantity(this)">−</button>
+          <input type="number" value="1" min="1" />
+          <button onclick="increaseQuantity(this)">+</button>
+        </div>
+        <div>
+          <button class="buy-btn">Buy Now</button>
+          <button class="review-btn">Review</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/product2.jpg"  onmouseover="hovered(this)" onmouseout="unhovered(this)" alt="Product Image" class="product-img" />
+        <h2 class="product-title">Running Shoes</h2>
+        <p class="product-description">Lightweight shoes for running.</p>
+        <span class="product-price">$79.99</span>
+        <div class="quantity-control">
+          <button onclick="decreaseQuantity(this)">−</button>
+          <input type="number" value="1" min="1" />
+          <button onclick="increaseQuantity(this)">+</button>
+        </div>
+        <div>
+          <button class="buy-btn">Buy Now</button>
+          <button class="review-btn">Review</button>
+        </div>                
+      </div>
+
+      <!--  -->
+
+      <div class="product-card">
+        <img src="assets/product3.jpg"  onmouseover="hovered(this)" onmouseout="unhovered(this)" alt="Product Image" class="product-img" />
+        <h2 class="product-title" id="product-name">Casual Shoes</h2>
+        <p class="product-description">Stylish and comfortable.</p>
+        <span class="product-price">$49.99</span>
+        <div class="quantity-control">
+          <button onclick="decreaseQuantity(this)">−</button>
+          <input type="number" value="1" min="1" />
+          <button onclick="increaseQuantity(this)">+</button>
+        </div>
+        <div>
+                    <button class="buy-btn" >Buy1 Now</button>
+                    <button class="review-btn" onclick="showReview()" >Review</button>
+                </div>
+</div>
+
+
+                
+                
             </div>
-            <div>
-                <button class="buy-btn">Buy now</button>
-                <button class="review-btn">Review</button>
-            </div>
+        </div>
+        
+        <!-- Review Div -->
+         <div class="review">
+            <label>Comment</label>
+            <input type="text" name="" id="input" oninput="showComment('#comment','#input')">
+            <input type="submit" onclick="submitReview('.review','#input')"  value="Add Comment">
          </div>
-         <!-- Product-2 -->
-          
-         <div class="product-card">
-            <img src="assets/product2.jpg" alt="" srcset="" class="product-img">
-            <h2 class="product-title">Product2</h2>
-            <p class="product-description">Description 2</p>
-            <span class="product-price">25$</span>
-            <div class="quantity-control">
-                <button>-</button>
-                <input type="number" value="1" min="1">
-                <button>+</button>
-            </div>
-            <div>
-                <button class="buy-btn">Buy now</button>
-                <button class="review-btn">Review</button>
-            </div>
-         </div>
-         <!-- Product 3  -->
-         <div class="product-card">
-            <img src="assets/product3.jpg" alt="" srcset="" class="product-img">
-            <h2 class="product-title">Product3</h2>
-            <p class="product-description">Description 3</p>
-            <span class="product-price">25$</span>
-            <div class="quantity-control">
-                <button>-</button>
-                <input type="number" value="1" min="1">
-                <button>+</button>
-            </div>
-            <div>
-                <button class="buy-btn">Buy now</button>
-                <button class="review-btn">Review</button>
-            </div>
-         </div>
-    </div>
-    
-    <script src="script.js"></script>
-</body>
+        <p id="comment"></p>
+        <script src="script.js"></script>
+    </body>
 </html>
