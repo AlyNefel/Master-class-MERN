@@ -4,9 +4,9 @@ output : var result = [3,5,4,1,2,98]
 
 */ 
 
-function removeDuplication(ali){
+function removeDuplicationtestpull(ali){
     //todo
-    // prepare an empty array to hold the result
+    // prepare an empty array xvkjvdfdfngjdto hold the result
     var result = []
     for (let i = 0; i < ali.length; i++) {
         console.log("setp : " +i)
