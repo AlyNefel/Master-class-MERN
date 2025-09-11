@@ -1,6 +1,6 @@
 //1- let & const => total replace of var 
  // before ES6 (ecma script version 6 -2015 )
- var name = "test"
+//  var name = "test"
  // after  : let
  let name1 = 5
     // for variables that can change //
@@ -109,4 +109,97 @@ if(age2>18){
 // condition1 ?(condition2 ? Expression1 : Expression2) : Expression3;
 const message2=age2<18?(age2>13?"Go to your Dady":"TEST nested"):" you are too young !!"
 console.log(message2)
+
+
+// Destructuring : just a way to extract values (from array or object )
+// Before ES6 var person ={name:"Ali",age: 100}
+// var name = person.name
+// console.log(name)
+
+const person ={name:"Ali",age3: 100}
+//the name of keys and const should be the same
+const {name,age3,adress="Tunisia"}=person
+console.log(age3)
+console.log(person)
+
+// nested object 
+const person2 = {name4:"Nested",
+    address:{
+ city:"Tunis",
+ zipCode:2083
+}
+}
+const {name4,address:{city,zipCode}}=person2
+/**
+ * let name4 = person2.name4
+ * let city = person2.address.city
+ * let zipCode = person2.address.zipCode
+ */
+
+console.log(zipCode)
+
+// Spread Operator  ...
+  // copy object or array without affecting the original
+let originalArray=[2,5,8]
+let copyArray = [...originalArray]
+
+console.log(copyArray)
+copyArray.push(99)
+console.log(copyArray)
+console.log(originalArray)
+  //combining two arrays 
+let arrayC1=[2,5,8]
+let arrayC2=[9,2]
+let result = [...arrayC1,...arrayC2]
+let resultObj={...person,...person2}
+console.log(result)
+console.log(resultObj)
+
+const addSpread=(x,y,z)=>x+y+z
+const numbers=[2,3,1]
+console.log(...numbers)
+console.log(addSpread(...numbers))
+
+// intro to getters / setters 
+ let state = "value"
+ const useState =[
+    //index 0 will hold a function 
+    function getState(){
+        console.log(state)
+        return state
+    },
+    function setState(newValue){
+       state = newValue
+       console.log(`the new value of state after update ${state}`)
+       return state
+    }
+ ]
+
+ useState[0]()
+ useState[1]("Naim")
+
+// const [getter,setter]=useState 
+
+let colors =["red", "blue" ,"green"]
+// declare an array of functions (to get or update )
+const useColors=[
+    function getter(){
+        console.log(colors)
+        return colors
+    },
+    function setter(newColor){
+      colors.push(newColor)
+      
+      return colors
+    }
+]
+const [getter,setter]=useColors
+getter()
+setter("yellow")
+getter()
+
+
+//.map() 
+//.filter()
+//.find()
 
