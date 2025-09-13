@@ -188,7 +188,7 @@ const useColors=[
         return colors
     },
     function setter(newColor){
-      colors.push(newColor)
+      colors=[...colors,newColor]
       
       return colors
     }
@@ -199,7 +199,115 @@ setter("yellow")
 getter()
 
 
+/// Call back function: use a function inside another function
+
+let fruits = ["APPLE","BANANA","cherry"]
+
+//step1: function that accepts a string => string in upperCase
+const capitalWord=(word)=>{
+return word.toUpperCase()
+}
+// function to lower case 
+const toLowerCase=(word)=>{
+return word.toLowerCase()
+}
+//const capitalWord=(word)=>word.toUpperCase()
+//step 2 : the main function 
+//function processFruits(fruitsArray){}
+const processFruits=(fruitsArray,callback)=>{
+for (let index = 0; index < fruitsArray.length; index++) {
+ 
+   fruitsArray[index]= callback(fruitsArray[index])
+}
+console.log(fruitsArray)
+return fruitsArray
+}
+// const processFruits1=(fruitsArray)=>{
+// for (let index = 0; index < fruitsArray.length; index++) {
+ 
+//    fruitsArray[index]= toLowerCase(fruitsArray[index])
+// }
+// console.log(fruitsArray)
+// return fruitsArray
+// }
+console.log()
+processFruits(fruits,toLowerCase)
+
 //.map() 
+// creates a new array by applying a callback function to each element 
+// custom .map 
+const mainFuntion = (array,callback)=>{
+    const result=[]
+    for (let index = 0; index < array.length; index++) {
+        result.push(callback(array[index]))
+        
+    }
+    console.log(result)
+    return result
+}
+
+// definition of two callback function 
+const squareFunction =(num)=>{
+    console.log(`Applying in element ${num}`)
+    return num*num
+}
+const plus2 =(num)=>num+=2
+const numbersC=[2,4,5]
+mainFuntion(numbersC,squareFunction)
+mainFuntion(numbersC,plus2)
+console.log(numbersC)
+// syntax in ES6
+const squaredNumbers =numbersC.map(num=>num*num)
+// num => numbersC[i] [2,4,5]
+const plus10Numbers = numbersC.map(num=>num+=10)
+console.log(squaredNumbers)
+console.log(plus10Numbers)
+console.log(numbersC)
+// factorial recursive 
+const factoriel =n=>{
+ if(n===0 || n===1) return 1
+ return n*factoriel(n-1)
+}
+
+console.log(factoriel(5))
+const factorialsArray=numbersC.map(num=>factoriel(num))
+console.log(factorialsArray)
 //.filter()
+// create a new array with elements that pass the test provided in the callback function 
+const allNum=[5,8,6,12,5,7,65]
+const evenNumbers = allNum.filter(num=>num%2===0)
+const moreThan10 = allNum.filter(num=>num>10)
+console.log(evenNumbers)
+console.log(moreThan10)
 //.find()
+//return element in array that satisfies a provided testing function
+//
+const firstEven=allNum.find(num=>num%2===0)
+const moreThan10Find = allNum.find(num=>num>10)
+console.log(firstEven)
+console.log(moreThan10Find)
+const indexOs12= allNum.indexOf(12)
+console.log(indexOs12)
+
+//.forEach 
+// similar execution of map but does not return a new array 
+// no return statement 
+// const forEachApplication =allNum.forEach(num=>console.log(num))
+// console.log(forEachApplication)
+const forEachApplication1 =allNum.forEach((num,index)=>{
+    console.log(`Number : ${num} is in index  : ${index}`)
+    
+})
+const fruitsLength = []
+fruits.forEach((fruit)=>{
+    fruitsLength.push(fruit.length)
+})
+console.log(fruitsLength)
+//[5,8,6,12,5,7,65]
+console.log(forEachApplication1)
+//console.log(allNum)
+
+console.log(fruitsLength)
+
+
 
