@@ -308,6 +308,3 @@ console.log(forEachApplication1)
 //console.log(allNum)
 
 console.log(fruitsLength)
-
-
-
