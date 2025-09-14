@@ -1,4 +1,5 @@
-
+import Greet from "./components/Greet"
+import UsersList from "./components/UsersList"
 function App() {
 const data="First variable in React"
 const array =[1,5,6]
@@ -37,36 +38,28 @@ const users=[
     age:30
   },
 ]
+// create a function that calculate the sum of ages
+// const totalAge=(array)=>{
+//   let total = 0
+//   for (let index = 0; index < array.length; index++) {
+//     total+=array[index].age
+//     console.log(total)
+//   }
+//   return total
+// }
+// const numbers =[45,45,45]
+// const totalAgeUsers = users.reduce((x, y) => x + y.age, 0);
+
+
   return (
     <>
+    <Greet></Greet>
     <h1>{data}</h1>
     <h1>{JSON.stringify(array)}</h1>
     <h1>List Of Users from {platform}</h1>
-    <ul>
-      {users.map((item, index)=>
-    <li key={index}>
-      <h2>{item.firstName}</h2>
-      <h2>{item.lastName}</h2>
-      <h2>{item.age}</h2>
-      <hr />
-    </li>  
-    )
-      }
-
-
-      {/* <li>
-        <h2>{users[0].firstName}</h2>
-        <h2>{users[0].lastName}</h2>
-        <h2>{users[0].age}</h2>
-      </li>
-      <hr />
-      <li>
-        <h2>{users[1].firstName}</h2>
-        <h2>{users[1].lastName}</h2>
-        <h2>{users[1].age}</h2>
-      </li> */}
-    </ul>
+    <h1>This is the total age of all users : { users.reduce((x, y) => x + y.age, 0)}</h1>
     
+    <UsersList users1={users} data={data}></UsersList>
     <button className="btn btn-success">Test Link</button>
 
     </>
