@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ListOfJokes = (props) => {
-    const {jokes}=props //["joke1","joke2"]
+    const {jokes,remove}=props //["joke1","joke2"]
   return (
     <div>
         <h1>List of Jokes : </h1>
@@ -12,8 +12,9 @@ const ListOfJokes = (props) => {
                 
                 <ul>
                     {jokes.map((elem,index)=>(
-                        <li key={index}>
+                        <li className="mb-3" key={index}>
                           {elem}
+                          <button onClick={()=>remove(index)} className="btn btn-danger m-3">Remove</button>
                         </li>
                     ))}
                 </ul>

@@ -19,6 +19,20 @@ function App() {
     setJokes([...jokes,newJoke])
     setNewJoke("")
   }
+// remove todo from list 
+// list + element with index => new list with filtred elements 
+const remove=(indexToRemove)=>{
+// we will filter by indexToRemove => new list
+console.log(indexToRemove) // 1
+const newList=jokes.filter((element,index)=>index!==indexToRemove)
+
+console.log(newList) // ["first","third"]
+setJokes(newList)
+}
+
+// const function =()=>{console.log(test
+// )
+//5+6} 
 
 /*
  list of jokes ["hjh"]
@@ -36,7 +50,7 @@ addToJokes(valueFromInput)
     {/* already has two other components : input + button */}
     <AddJoke handleSubmit={handleSubmit} newJoke={newJoke} handleChange={handleChange}></AddJoke> 
 
-    <ListOfJokes  jokes={jokes}></ListOfJokes>
+    <ListOfJokes remove={remove}  jokes={jokes}></ListOfJokes>
     </div>
   )
 }
