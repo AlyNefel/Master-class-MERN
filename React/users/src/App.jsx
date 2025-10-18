@@ -21,13 +21,14 @@ console.log(users)
   useEffect(()=>{
    getUsers()
   },[])
+  localStorage.setItem("users",JSON.stringify(users) )
   return (
     <div className="container mt-4">
     <Router>
       <NavBar></NavBar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/allUsers" element={<AllUsers users={users} ></AllUsers>}></Route>
+        <Route path="/allUsers" element={<AllUsers ></AllUsers>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/oneUser/:id" element={<OneUser users={users}></OneUser>} ></Route>
       </Routes>

@@ -1,6 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-const AllUsers = ({users}) => {
+const AllUsers = () => {
+    console.log(typeof JSON.parse(localStorage.getItem("users")) )
+    const users=JSON.parse(localStorage.getItem("users")) 
+    
   return (
     <div className="row">
         {users.map((user,index)=>{
