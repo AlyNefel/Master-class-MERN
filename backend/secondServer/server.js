@@ -13,6 +13,11 @@ app.listen(port,()=>{
     console.log(`Server is running on port : ${port}`)
 })
 
+// mkdir my-express-app
+// cd my-express-app
+// npm init -y
+// npm install express
+// npm install --save-dev nodemon
 
 
 
