@@ -36,10 +36,13 @@ const getTaskById=async(req,res)=>{
 const createTask=async(req,res)=>{
     try {
     // object mta3 task : njibouh men req.body
+    console.log("task from front",req.body)
+
     const task = new Task(req.body)
+    console.log("task after new task",task)
     // bech nzid task li sna3tha le DB 
     await task.save()
-  res.satus(201).json(task)
+  res.status(201).json(task)
 
     } catch (error) {
     res.status(500).json(error)

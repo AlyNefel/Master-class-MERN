@@ -8,7 +8,7 @@ const router=Router()
 router.route("/tasks")
 .get(getAllTasks)
 .post(createTask)
-// router.get("/tasks",getAllTasks)
+// router.get("/tasks",getAllTasks) localhost:3000/api/tasks
 
 
 

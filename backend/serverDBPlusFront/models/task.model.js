@@ -17,9 +17,9 @@ const taskSchema=new mongoose.Schema(
 // type :Boolean,
 // default:false
 //         },
-        priopity:{
+        priority:{
             type:String,
-            enum:["low","mudium","high"]
+            enum:["low","medium","high"]
         }
     },
     //createdAt / updatedAt  => new date() => now 
