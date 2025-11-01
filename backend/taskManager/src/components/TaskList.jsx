@@ -16,6 +16,16 @@ const getAllTasks=async()=>{
     }
 }
 
+// delete task 
+const handelDelete=async(id)=>{
+    try {
+        await axios.delete(`http://localhost:3000/api/tasks/${id}`)
+        getAllTasks()
+    } catch (error) {
+        console.error(error)
+    }
+}
+
 // useEffect 
 useEffect(()=>{
     getAllTasks()
@@ -29,6 +39,7 @@ useEffect(()=>{
     <th>Title</th>
     <th>Content</th>
     <th>Priority</th>
+    <th>Action</th>
 </tr>
         </thead>
         <tbody>
@@ -37,6 +48,12 @@ useEffect(()=>{
 <td>{task.title}</td>
 <td>{task.content}</td>
 <td>{task.priority}</td>
+<td>
+    <Link className="btn btn-info" to={`/update/${task._id}`}>Update</Link>
+    <Link className="btn btn-primary" to={`/details/${task._id}`}>Details</Link>
+    <button className="bnt btn-danger" onClick={()=>handelDelete(task._id)}>Delete</button>
+
+</td>
     </tr>
 ))
 }
