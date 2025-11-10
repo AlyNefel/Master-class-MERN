@@ -45,8 +45,10 @@ export const addComment=async(req,res)=>{
         
         // get the comment 
         const {comment}=req.body
-         // get the id of the post 
-         const {id} = req.params.id
+   
+   
+   console.log('comment',comment)     // get the id of the post 
+         const id = req.params.id
          // find the post from the DB
          const post= await Post.findById(id) 
              //if !post
@@ -76,6 +78,7 @@ export const findPostById=async(req,res)=>{
         }         
         res.json(post)
     } catch (error) {
+        res.json({message:"post not found "})
         console.error(error)
     }
 }
