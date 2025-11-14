@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- 
+      DOCUMENTATION: Bootstrap container-fluid Class
+      
+      The container-fluid class creates a responsive full-width container that spans 
+      the entire width of the viewport (100% width) at all breakpoints.
+      
+      ANALOGY: Think of container-fluid like a rubber band that stretches to fill 
+      the entire width of its parent container, whereas the standard 'container' 
+      class is like a fixed-size box that has predefined max-widths at different 
+      screen sizes and stays centered with margins on the sides.
+      
+      KEY CHARACTERISTICS:
+      - Spans 100% width of the parent/viewport
+      - Responsive on all screen sizes
+      - No max-width breakpoints
+      - Maintains padding (gutters) on left and right
+      - Perfect for full-width layouts or hero sections
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -39,7 +57,7 @@
         
             <!-- Aside -->
              <div class="col-3">
-                <div style="height: 300px;" class="bg-success text-white text-center p-3">Aside</div>
+                <div style="height: 300px;" class="bg-success text-white h-100 text-center p-3">Aside</div>
              </div>
 
              <!-- Main -->
@@ -68,6 +86,21 @@
 
 
          </div>
+
+<!-- start center end  -->
+ <div class="container">
+  <div class="row align-items-start bg-danger mt-4" style="height: 300px;">
+    <div class="col bg-warning align-self-start" style="height: 33%;">
+      One of three columns
+    </div>
+    <div class="col bg-primary align-self-center" style="height: 33%;">
+      One of three columns
+    </div>
+    <div class="col bg-secondary align-self-end" style="height: 33%;">
+      One of three columns
+    </div>
+  </div>
+</div>
 
 
          <!-- Footer -->
