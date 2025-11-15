@@ -14,8 +14,18 @@ const userSchema = new mongoose.Schema({
     },
     password:{
         type:String,
-        required:true
+        required:true,
+                minlength:[8,"The user name must be at least 8 chars "]
+
     }
+    // isActive:{
+    //     type:Boolean,
+    //     default:true
+    // },
+    // loginTries:{
+    //     type:Number,
+    //     default:0
+    // }
 },{
     timestamps:true
 });

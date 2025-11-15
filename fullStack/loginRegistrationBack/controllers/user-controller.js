@@ -41,4 +41,42 @@ try {
 } catch (error) {
     res.status(500).json({message:"server error",error:error.message})
 }
+
+}
+
+// login flow
+export const login=async(req,res)=>{
+    //  const tries=0
+    const {email,password}=req.body
+    const user=await User.findOne({email})
+    if(!user) return res.status(401).json({message:"Invalid Email !"})
+        // if(!user.isActive) return res.json({message:"please contact the support to reactivate ur account"})
+     const match =await bcrypt.compare(password,user.password)
+    if(!match) return res.status(401).json({message:"Invalid password !!"})
+        const token=jwt.sign({id:user._id,name:user.username},JWT_SECRET,{expiresIn:"2h"})
+
+   //respond with 
+   res.status(201).json({token})
+}
+// collect email and password from req.body
+//1-test : email exists walla => findOne({email}) 
+// 1-1-if !user =>return
+//1-2 -if user : user.password =>bcrypt.compare(password,user.password) =>true || false
+ //1-2-1 : false : bech na3mel update 3la user loginTries++ => return invalid password
+ //2 // 3 => na3mel condition if login tries == 3 => ywalli update 3la isActive = bech nrodha false 
+ //1-2-2 : sign a token and send it in the response
+
+// profile function : bech tjib information mta3 logged-in user
+export const profile=async(req,res)=>{
+    // find the user by id (id extracted from JWT token)
+    //1-find by id 
+    try {
+        const user =await  User
+.findById(req.user.id).select("-password")
+
+// bech nraja3 user li jeni maghir password fi réponse
+res.json(user) 
+    } catch (error) {
+        res.status(500).json({message:"Server error ",error:error.message})
+    }
 }
