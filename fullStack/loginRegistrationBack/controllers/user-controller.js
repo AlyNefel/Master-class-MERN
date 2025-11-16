@@ -11,12 +11,14 @@ const JWT_SECRET =process.env.JWT_SECRET
 
 export const registration =async(req,res)=>{
 try {
+    
     // destructure username, email, password
     const {username,email,password}=req.body
     // validation (fileds presence)
     if(!username || !email || !password)
         return res.status(400).json({message:"Missing fields"})
-    //check the email 
+    //check the email
+   
     const existingUser = await User.findOne({email});
     // already exist return res with message ( already registred)
     if(existingUser) return res.status(409).json({message:"Email already registred !"})
