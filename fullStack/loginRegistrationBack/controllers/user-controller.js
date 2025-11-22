@@ -51,10 +51,14 @@ export const login=async(req,res)=>{
     //  const tries=0
     const {email,password}=req.body
     const user=await User.findOne({email})
-    if(!user) return res.status(401).json({message:"Invalid Email !"})
+    if(!user) {
+
+    return res.json({message:"Invalid creddidid email !"})
+      }
+      
         // if(!user.isActive) return res.json({message:"please contact the support to reactivate ur account"})
      const match =await bcrypt.compare(password,user.password)
-    if(!match) return res.status(401).json({message:"Invalid password !!"})
+    if(!match) return res.json({message:"Invalid password !!"})
         const token=jwt.sign({id:user._id,name:user.username},JWT_SECRET,{expiresIn:"2h"})
 
    //respond with 

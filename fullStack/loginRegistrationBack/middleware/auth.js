@@ -23,16 +23,16 @@ export const auth=(req,res,next)=>{
    const token=parts[1]
 // test if the part 1 exists 
 if(!token){
-    return res.status(401).json({message:"bad token"})
+    return res.json({message:"bad token"})
 }
 // decode the jwt token 
 jwt.verify(token,process.env.JWT_SECRET,(error,decoded)=>{
     if(error)
 {
-    return res.status(401).json({message:"Bad Token"})
+    return res.json({message:"Bad Token"})
 }
 // create req.user attach fih decoded
-req.user=decoded
+req.user=decoded // req.user={id:"sdhfjsdhfishd66",name:"yassin"}
 // next  : bech tkammel famma function o5ra bech te5dem
 next()
 })

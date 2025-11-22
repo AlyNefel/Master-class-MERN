@@ -23,7 +23,7 @@ export const register=async(form)=>{
             return response.data
         
     } catch (error) {
-        return error.response.data.mesage?error.response.data.mesage :"Registration failed"
+        return error.response.data.message?error.response.data.message :"Registration failed"
     }
    
 }
@@ -33,9 +33,10 @@ export const login=async(form)=>{
    try {
      const response = await api.post("/login",form)
          if(response.data.token) localStorage.setItem("token",response.data.token)
+            consolelog(response.data)
             return response.data
    } catch (error) {
-    return error.response.data.mesage?error.response.data.mesage :"Login failed"
+    return error.response.data.message?error.response.data.message :"Login failed"
    }
 }
 
@@ -43,9 +44,10 @@ export const login=async(form)=>{
 export const profile=async()=>{
     try {
         const response = await api.get("/profile")
+        console.log("from api .js",response.data)
         return response.data
     } catch (error) {
-        return error.response.data.mesage?error.response.data.mesage :"Get profile failed"
+        return error.response.data.message?error.response.data.message :"Get profile failed"
     }
 }
 
