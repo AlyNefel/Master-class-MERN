@@ -9,12 +9,13 @@ const Profile = () => {
     // function to get the user profile 
    const getUserProfile=async()=>{
     const response=await profile()
-    console.log("From profile",typeof response)
+    console.log("From profile", response)
     if(typeof response =="string"){
 nav("/")
     } else{
-
+    
     setUser(response)
+    // const creator =response._id
     }
    }
 //useEffect
@@ -33,6 +34,7 @@ const logOut =()=>{
 
 return (
     <div className="container-fluid">
+    {user?._id}
         <button className='btn btn-danger' onClick={logOut}>Logout</button>
         <div className="row">
             <div className="col-md-3 bg-light p-4">

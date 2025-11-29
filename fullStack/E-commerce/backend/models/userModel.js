@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 
 const userSchema = new mongoose.Schema({
-    username:{
+    name:{
         type:String,
         required:[true,"the username is required"],
         //required:[true,"DesTitle is required dont forget that !"]
@@ -15,21 +15,15 @@ const userSchema = new mongoose.Schema({
     password:{
         type:String,
         required:true,
-                minlength:[8,"The user name must be at least 8 chars "]
+        minlength:[8,"The user name must be at least 8 chars "]
 
     },
-    tasks:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Task"
-    }]
-    // isActive:{
-    //     type:Boolean,
-    //     default:true
-    // },
-    // loginTries:{
-    //     type:Number,
-    //     default:0
-    // }
+    role:{
+      type:String,
+      default:"user"
+    },
+    
+    
 },{
     timestamps:true
 });

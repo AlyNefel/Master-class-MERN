@@ -20,6 +20,7 @@ export const register=async(form)=>{
          const response = await api.post("/register",form)
          console.log("from register api token",response.data.token)
          if(response.data.token) localStorage.setItem("token",response.data.token)
+            localStorage.setItem("userId",response.data.userId)
             return response.data
         
     } catch (error) {
@@ -34,6 +35,7 @@ export const login=async(form)=>{
      const response = await api.post("/login",form)
          if(response.data.token) localStorage.setItem("token",response.data.token)
             consolelog(response.data)
+        localStorage.setItem("userId",response.data.userId)
             return response.data
    } catch (error) {
     return error.response.data.message?error.response.data.message :"Login failed"

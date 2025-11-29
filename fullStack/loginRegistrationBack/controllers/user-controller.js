@@ -36,7 +36,7 @@ try {
    const token=jwt.sign({id:user._id,name:user.username},JWT_SECRET,{expiresIn:"2h"})
 
    //respond with 
-   res.status(201).json({token})
+   res.status(201).json({token,userId:user._id})
  //alternative res.status(201).json({token,username:user.username})
    
     
@@ -62,7 +62,7 @@ export const login=async(req,res)=>{
         const token=jwt.sign({id:user._id,name:user.username},JWT_SECRET,{expiresIn:"2h"})
 
    //respond with 
-   res.status(201).json({token})
+   res.status(201).json({token,userId:user._id})
 }
 // collect email and password from req.body
 //1-test : email exists walla => findOne({email}) 
