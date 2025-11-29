@@ -2,8 +2,9 @@ import express from "express"
 import dotenv from "dotenv"
 import connectDb from "./config/db_config.js"
 import cors from "cors"
-import router from "./routes/user-routes.js"
+import router from "./routes/userRoutes.js"
 import categoryRouter from "./routes/categoryRoutes.js"
+import productRouter from "./routes/productRoutes.js"
 //we will call dontenv config 
 
 dotenv.config()
@@ -15,6 +16,8 @@ app.use(cors())
 app.use(express.json())
 app.use("/api/users",router)
 app.use("/api/categories",categoryRouter)
+app.use("/api/products",productRouter)
+
 // invoke the db connection 
 connectDb()
 

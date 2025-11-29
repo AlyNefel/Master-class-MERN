@@ -7,7 +7,7 @@ productName:{
 },
 productDescription:{
     type:String,
-    required:[true,"please enter product description !"]
+    // required:[true,"please enter product description !"]
 },
 productPrice:{
     type:Number,
@@ -20,7 +20,7 @@ category:{
 },
 numberInStock:{
     type:Number,
-    required:[true,"Please enter quantity in stock!"]
+    // required:[true,"Please enter quantity in stock!"]
 },
 createdBy:{
     type:mongoose.Schema.Types.ObjectId,
