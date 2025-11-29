@@ -27,6 +27,10 @@ createdBy:{
     ref:'User',
     required:true
 },
+isPublished:{
+type:Boolean,
+default:false
+},
 reviews:[
     {
     user:{
