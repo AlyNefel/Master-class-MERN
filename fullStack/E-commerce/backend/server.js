@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 import connectDb from "./config/db_config.js"
 import cors from "cors"
 import router from "./routes/user-routes.js"
-import categoryRouter from "./routes/task-routes.js"
+import categoryRouter from "./routes/categoryRoutes.js"
 //we will call dontenv config 
 
 dotenv.config()
