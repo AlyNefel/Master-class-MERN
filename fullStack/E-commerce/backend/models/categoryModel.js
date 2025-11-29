@@ -8,7 +8,10 @@ categoryName:{
 categoryDescription:{
     type:String,
 },
-
+isDeleted:{
+    type:Boolean,
+    default:false,
+}
 
 },{
     timestamps:true

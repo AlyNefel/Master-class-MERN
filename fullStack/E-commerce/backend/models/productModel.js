@@ -14,7 +14,7 @@ productPrice:{
     required:[true,"please enter product price !"]
 },
 category:{
-    type:mongoose.Schema.Types.ObjectId,
+    type:mongoose.Schema.Types.ObjectId,//
     ref:'Category',
     required:true
 },
