@@ -45,6 +45,11 @@ orderStatus:{
 type:String,
 default:"Processing"
 },
+shop:{
+type:mongoose.Schema.Types.ObjectId,//15
+ref:'Shop',
+required:true
+},
 tax:{
     type:Number
 },

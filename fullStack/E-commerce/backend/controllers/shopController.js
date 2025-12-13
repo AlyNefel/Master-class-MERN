@@ -90,7 +90,9 @@ export const getShopProducts=async(req,res)=>{
        .populate("category","categoryName")
        .populate("reviews.user","name")
        .sort({createdAt:-1})
-        
+        // loop 3al products [{....,warning:""},{}]
+        // aya item.numberInStock<4 => item.warning:"Be careful this product has less then 4 pieces remaining"
+        res.json(products)
     } catch (error) {
           res.json({message:"error fetching shop products",error:error.message}) 
     }
