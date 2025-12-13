@@ -1,5 +1,7 @@
 import Order from "../models/orderModel.js"
 
+import Product from "..models/productModel.js"
+
 // create order 
 export const createOrder=async(req,res)=>{
 try {
@@ -62,6 +64,27 @@ export const updateOrderStatus=async(req,res)=>{
     const {orderStatus}=req.body
     // use req.params.id to find the order
     const order = await Order.findById(req.params.id).populate("orderItems.product")
+ // in general case => mayhemnich f order status chnia 
+ order.orderStatus=orderStatus
+ // wa9t li tabda orderStatus =="Delivered" => wa9tha bech na99es mel quantity
+
+ if(orderStatus=="Delivered"){
+    //for loop for order.orderItems
+    //[{product:{_id,productName,,,numberInStock},50},{...,100},{...20}]
+    for(const item of order.orderItems){
+        // model bech ysir 3lih update =>Product
+        // newNumber = item.product.numberInStock-item.quantity
+
+        // {...item.product.numberInStock:newNumber}
+        await Product.findByIdAnUpdate(item.product._id,{
+            $inc:{numberInStock:-item.quantity}
+        })
+    }
+ }
+
+// persist the changes for the order 
+await order.save()
+res.json({message:"Order status updated successfully !!"})
 
     } catch (error) {
         res.json({message:"Error updating order status",error:error.message})
