@@ -14,8 +14,13 @@ productPrice:{
     required:[true,"please enter product price !"]
 },
 category:{
-    type:mongoose.Schema.Types.ObjectId,//
+    type:mongoose.Schema.Types.ObjectId,//15
     ref:'Category',
+    required:true
+},
+shop:{
+type:mongoose.Schema.Types.ObjectId,//15
+    ref:'Shop',
     required:true
 },
 numberInStock:{

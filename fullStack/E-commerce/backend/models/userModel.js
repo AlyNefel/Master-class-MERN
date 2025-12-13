@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     },
     role:{
       type:String,
-      default:"user"
+      default:"user" // 3 roles : admin / vendor / user (client)
     },
     
     

@@ -13,6 +13,8 @@ isDeleted:{
     default:false,
 }
 
+// products {[id: ref Product]}
+
 },{
     timestamps:true
 })

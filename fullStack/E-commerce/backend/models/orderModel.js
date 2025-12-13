@@ -19,7 +19,7 @@ shippingAdress:{
     required:true
  }
 },
-orderItems:[
+orderItems:[ // [{....,50},{...,100},{...20}]
     {
         product:{
             type:mongoose.Schema.Types.ObjectId,

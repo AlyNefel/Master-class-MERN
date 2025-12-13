@@ -39,7 +39,7 @@ res.json({message:"category updated successfully !!"})
 //delete category 
 export const deleteCategory=async (req,res) => {
      try {
-    // nchouf est ce que famme products 3andhom categoryid hedhi
+    // nchouf est ce que famme products 3andhom categoryid hedhi 15 :id 
     const products=await Product.find({category:req.params.id})
     if(products.length >0){
        res.json({message:"you can not delete this cat !!"}) 
