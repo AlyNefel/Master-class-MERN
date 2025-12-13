@@ -1,4 +1,5 @@
 import Shop from "../models/shopModel.js"
+import Product from "../models/productModel.js"
 
 // create shop 
 export const createShop =async(req,res)=>{
@@ -78,5 +79,19 @@ export const deleteShop=async(req,res)=>{
         
     } catch (error) {
          res.json({message:"error deleting shop",error:error.message}) 
+    }
+}
+
+// get shop products
+export const getShopProducts=async(req,res)=>{
+    try {
+        // Product.find({shop:req.params.id})
+        const products = await Product.find({shop:req.params.id})
+       .populate("category","categoryName")
+       .populate("reviews.user","name")
+       .sort({createdAt:-1})
+        
+    } catch (error) {
+          res.json({message:"error fetching shop products",error:error.message}) 
     }
 }
