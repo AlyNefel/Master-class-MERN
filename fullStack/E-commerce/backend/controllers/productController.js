@@ -40,7 +40,8 @@ try {
 
     //
 
-   const product = await Product.create({
+   const product = await Product.create(
+    {
     productName,
     productDescription,
     productPrice,

@@ -8,6 +8,6 @@ router.delete("/:id",deleteCategory)
 router.put("/:id",updateCategory)
 router.get('/:id',getCatById);
 router.post('/',createCategory);
-router.get("/",auth,getAllCategories)
+router.get("/",getAllCategories)
 
 export default router
