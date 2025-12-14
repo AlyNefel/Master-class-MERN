@@ -49,7 +49,11 @@ reviews:[
     required:true
     }
     }
-]
+],
+image:{
+url:String,
+public_id:String
+}
 
 },{
     timestamps:true

@@ -1,3 +1,4 @@
+import cloudinary from "../config/cloudinary.js";
 import Category from "../models/categoryModel.js";
 import Product from "../models/productModel.js"
 
@@ -16,9 +17,43 @@ export const getAllProducts=async(req,res)=>{
 
 export const createProduct=async(req,res)=>{
 try {
+    //collect data from req.body
+    const {productName,productDescription,productPrice,category,shop,numberInStock,createdBy,image}=req.body
+    // require the image existance 
+    if(!image){
+        return res.json({message:"Dont forget the ilage !!"})
+    }
 
-    await Product.create(req.body)
-    res.json({message:"product created succseccfully !!"})
+    // upload image using cloudinary
+   // Upload an image
+     const uploadResult = await cloudinary.uploader
+       .upload(
+          image,{
+            folder:"products"
+          }
+       )
+       .catch((error) => {
+           console.log(error);
+       });
+    
+    console.log(uploadResult);
+
+    //
+
+   const product = await Product.create({
+    productName,
+    productDescription,
+    productPrice,
+    category,
+    shop,
+    numberInStock,
+    createdBy,
+    image:{
+       url: uploadResult.secure_url,
+       public_id:uploadResult.public_id
+    }}
+   )
+    res.json({message:"product created succseccfully !!",product})
     
 } catch (error) {
         res.json({message:"error creating product!!"})
