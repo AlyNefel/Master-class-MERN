@@ -12,7 +12,12 @@ isDeleted:{
     type:Boolean,
     default:false,
 }
-
+,
+shop:{
+        type:mongoose.Schema.Types.ObjectId, // 10
+        ref:"Shop",
+        required:true
+    },
 // products {[id: ref Product]}
 
 },{

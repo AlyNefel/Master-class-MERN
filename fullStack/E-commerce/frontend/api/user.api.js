@@ -31,3 +31,15 @@ export const login=async(form)=>{
     return error.response.data.message?error.response.data.message :"Login failed"
    }
 }
+// get profile 
+export const profile=async()=>{
+    try {
+        const response = await api.get("/profile")
+        console.log("from api .js",response.data)
+        return response.data
+    } catch (error) {
+        return error.response.data.message?error.response.data.message :"Get profile failed"
+    }
+}
+
+export default api;

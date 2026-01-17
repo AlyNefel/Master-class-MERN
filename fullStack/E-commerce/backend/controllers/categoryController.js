@@ -1,5 +1,7 @@
 import Category from "../models/categoryModel.js";
 import Product from "../models/productModel.js"
+import { getMyShop } from "./shopController.js";
+import Shop from "../models/shopModel.js"
 
 //cruds
 // get all cats
@@ -60,6 +62,18 @@ export const getCatById=async (req,res) => {
     res.json(category)
     } catch (error) {
     res.json({message:"error fetching category!!"})
+
+    }
+}
+// get category by shopId
+
+export const getShopCategories=async(req,res)=>{
+    try {
+         const shop =await Shop.findOne({owner:req.user.id})
+         const shopCategories = await Category.find({shop:shop._id})
+         res.json(shopCategories)
+    } catch (error) {
+         res.json({message:"error fetching categories!!"})
 
     }
 }
