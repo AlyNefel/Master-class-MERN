@@ -15,7 +15,7 @@ const shopSchema=new mongoose.Schema({ // _id :1 ; owner:10
 type:String
     },
     phoneNumber:{
-        type:string
+        type:String
     },
     isActive:{
         type:Boolean,

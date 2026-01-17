@@ -37,3 +37,5 @@ req.user=decoded // req.user={id:"sdhfjsdhfishd66",name:"yassin"}
 next()
 })
 }
+
+export default auth
