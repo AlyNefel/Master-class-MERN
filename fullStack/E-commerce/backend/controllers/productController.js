@@ -93,4 +93,12 @@ export const getProductById=async (req,res) => {
     }
 }
 
-//add review
+//get shop products (seller products)
+export const getShopProducts=async(req,res)=>{
+try {
+    const products =await Product.find({shop:req.params.shopId})
+    res.json(products)
+} catch (error) {
+    res.json({message:"error fetching product!!"})
+}
+}
